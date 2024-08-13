@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Properties - My Real Estate Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <!-- TomTom Maps API Script -->
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
+    <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css">
+
     <script>
         function initMap() {
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644}, 
+            // Initialize the TomTom map
+            var map = tt.map({
+                key: 'z7Px0hmoymQ349fnKJaFZh3zuRAYPmkl',
+                container: 'map',
+                center: {lat: -34.397, lng: 150.644},
                 zoom: 10
             });
 
+            // Add markers for the properties
             var properties = [
                 {lat: -34.397, lng: 150.644, title: 'Property 1'},
                 {lat: -34.307, lng: 150.744, title: 'Property 2'},
@@ -21,13 +28,15 @@
             ];
 
             properties.forEach(function(property) {
-                var marker = new google.maps.Marker({
-                    position: {lat: property.lat, lng: property.lng},
-                    map: map,
-                    title: property.title
-                });
+                new tt.Marker()
+                    .setLngLat([property.lng, property.lat])
+                    .addTo(map)
+                    .setPopup(new tt.Popup({ offset: 35 }).setText(property.title));
             });
         }
+
+        // Load the map when the window loads
+        window.onload = initMap;
     </script>
 </head>
 <body>
