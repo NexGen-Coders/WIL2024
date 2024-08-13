@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Your Property</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rent Your Property</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="properties.html">Properties</a>
+        <a href="sell.html">Sell Your House</a>
+        <a href="rent.html">Rent Your Property</a>
+    </nav>
+    <main>
+        <section id="rent-property">
+            <h2>Submit Your Rental Property</h2>
+            <form action="/submit-rental" method="POST">
+                <label for="owner-name">Your Name:</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+
+                <label for="owner-email">Your Email:</label>
+                <input type="email" id="owner-email" name="owner-email" required>
+
+                <label for="owner-phone">Your Phone Number:</label>
+                <input type="tel" id="owner-phone" name="owner-phone" required>
+
+                <label for="rental-address">Property Address:</label>
+                <input type="text" id="rental-address" name="rental-address" required>
+
+                <label for="rental-price">Rental Price (per month):</label>
+                <input type="number" id="rental-price" name="rental-price" required>
+
+                <label for="rental-description">Property Description:</label>
+                <textarea id="rental-description" name="rental-description" rows="4" required></textarea>
+
+                <label for="rental-images">Property Images:</label>
+                <input type="file" id="rental-images" name="rental-images" accept="image/*" multiple>
+
+                <button type="submit">Submit Property</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Real Estate Platform</p>
+    </footer>
+</body>
+</html>
