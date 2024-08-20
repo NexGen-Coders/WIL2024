@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Registered Users</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup page.html">Sign Up</a>
+    </nav>
+    <main>
+        <h2>Users List</h2>
+        <ul>
+            {% for user in users %}
+                <li>Username: {{ user.0 }}, Email: {{ user.1 }}</li>
+            {% endfor %}
+        </ul>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>

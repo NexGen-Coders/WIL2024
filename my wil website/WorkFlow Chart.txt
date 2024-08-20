@@ -1,0 +1,12 @@
+Wil Project 2024:
+
+Week 1:
+
+Luvuyo V: Designed the following webpages, Index.html, Login.html, Signup page.html, properies.html.
+Used Styles.css to create a user interface as well as placed images to create a warm and welcome website experience.
+
+Ross S: Created GitHub organisation, uploaded project to git and implemented a Map API (tomtom), as well as assisted
+Luvuyo with code correction errors in the existing forms. 
+
+
+Week 2:
