@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - My Website</title>
+    <link rel="stylesheet" href="/my wil website/my wil website/Webpages/Styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sign Up for an Account</h1>
+    </header>
+    
+    <main>
+        <form id="signup-form" action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Sign Up</button>
+            <p id="error-message"></p>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('signup-form');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('Users.txt.txt', {
+                method: 'POST',
+                body: `${username},${password}\n`,
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'OK') {
+                        alert('Sign up successful! Please log in to continue.');
+                        window.location.href = 'login page.html';
+                    } else {
+                        errorMessage.textContent = 'Error signing up. Please try again.';
+                    }
+                });
+        });
+    </script>
+    <nav>
+        
+        <a href="login page.html">Login</a>
+        
+    </nav>
+</body>
+</html>
