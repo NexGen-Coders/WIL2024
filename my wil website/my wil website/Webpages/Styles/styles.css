@@ -119,7 +119,7 @@ body {
 
 /* Header styling */
 header {
-    background-image: url('/my wil website/my wil website/Wil\ photo\ 1.jpg ');
+    background-image: url('../../Wil\ photo\ 1.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
