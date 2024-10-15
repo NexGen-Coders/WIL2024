@@ -6,6 +6,7 @@
     <title>Login - My Website</title>
     <link rel="stylesheet" href="../Styles/styles.css">
     <link rel="icon" href="../../WIL Estate.jpg" type="image/jpeg">
+    <script src="../JS/auth.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
     </header>
     
     <main>
-        <form id="login-form" action="#" method="POST">
+        <form id="login-form" onsubmit="return handleLogin(this);" >
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br>
@@ -21,7 +22,7 @@
             <input type="password" id="password" name="password" required>
             <br>
             <button type="submit">Login</button>
-            <p id="error-message"></p>
+            <p id="error-message" style="color: red;"></p>
         </form>
 
     </main>
@@ -32,37 +33,5 @@
         
         <p>&copy; 2024 My Website</p>
     </footer>
-
-    <script>
-        const form = document.getElementById('login-form');
-        const errorMessage = document.getElementById('error-message');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            fetch('Users.txt.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const users = data.split('\n');
-                    let isValid = false;
-
-                    users.forEach((user) => {
-                        const [usernameFromTxt, passwordFromTxt] = user.split(',');
-                        if (usernameFromTxt === username && passwordFromTxt === password) {
-                            isValid = true;
-                        }
-                    });
-
-                    if (isValid) {
-                        window.location.href = 'index page.html';
-                    } else {
-                        errorMessage.textContent = 'Invalid username or password';
-                    }
-                });
-        });
-    </script>
 </body>
 </html>
