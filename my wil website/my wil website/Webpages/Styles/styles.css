@@ -372,3 +372,25 @@ main {
 #contact-agent-btn:hover {
     background-color: #218838;
 }
+
+.container {
+    margin: 100px 0 0 250px;
+    width: 70%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: #20c1c4(255, 255, 0.684);
+    transition: all ease-in-out 0.5s;
+}
+
+.container img:hover {
+    width: 50%;
+}
