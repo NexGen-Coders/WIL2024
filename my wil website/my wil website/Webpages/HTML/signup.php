@@ -1,6 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Capture form inputs
+    $firstName = $_POST['first name']
+    $lastName = $_POST['last name']
     $username = $_POST['username'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
@@ -21,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO registration (username, email, phonenumber, password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $username, $email, $phonenumber, $password);
+    $stmt = $conn->prepare("INSERT INTO registration (firstName, lastName, username, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?S)");
+    $stmt->bind_param("ssssss",$firstName, $lastName, $username, $email, $phonenumber, $password);
 
     // Execute the statement
     if ($stmt->execute()) {
