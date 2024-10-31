@@ -190,6 +190,8 @@ header h1 {
     padding: 50px 20px;
     background-color: #f4f4f4;
     text-align: center;
+    border-radius: 10%;
+    border: #20c1c4;
 }
 
 #sell-house h2 {
@@ -202,6 +204,8 @@ header h1 {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
+    border-radius: 10%;
+    border: #20c1c4;
 }
 
 #sell-house label {
@@ -324,7 +328,6 @@ main {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    gap: 10%;
 }
 
 .property-images {
@@ -340,6 +343,7 @@ main {
 .property-info {
     flex: 2;
     padding: 20px;
+    gap: 100%;
 }
 
 .property-info h2 {
