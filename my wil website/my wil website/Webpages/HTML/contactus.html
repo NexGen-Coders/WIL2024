@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
+  <link rel="stylesheet" href="../Styles/styles.css">
+</head>
+
+<head>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,6 +17,26 @@
       height: 100vh;
       margin: 0;
     }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #81cfff;
+      text-align: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .contact-form {
       max-width: 400px;
       width: 100%;
@@ -45,8 +69,17 @@
       background-color: #45a049;
     }
   </style>
+
 </head>
 <body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="rent.html">Rent</a>
+    <a href="sell.html">Sell Your House</a>
+    
+  </nav>
 
 <div class="contact-form">
   <h2>Contact Us</h2>
