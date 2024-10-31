@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .contact-form {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input, .contact-form textarea, .contact-form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="contact-form">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="responseMessage"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your user ID
+  (function() {
+    emailjs.init("yKvQENLaXKl1Zeilv"); // Replace YOUR_USER_ID with your actual EmailJS user ID
+  })();
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the form from submitting the traditional way
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Parameters for EmailJS
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message
+    };
+
+    // Send the email
+    emailjs.send('service_u0cn7h6', 'template_4bfwdfs', templateParams)
+      .then(response => {
+        document.getElementById('responseMessage').innerText = "Message sent successfully!";
+        document.getElementById('contactForm').reset();
+      })
+      .catch(error => {
+        document.getElementById('responseMessage').innerText = "Failed to send message.";
+        console.error('Failed to send email:', error);
+      });
+  });
+</script>
+
+</body>
+</html>
