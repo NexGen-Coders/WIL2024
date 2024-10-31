@@ -403,7 +403,8 @@ main {
 
 .container img {
     width: 20%;
-    height: 100%;
+    height: auto;
+    align-items: auto;
     object-fit: cover;
     border-radius: 10px;
     border: #20c1c4(255, 255, 0.684);
@@ -411,7 +412,7 @@ main {
 }
 
 .container img:hover {
-    width: 50%;
+    width: 90%;
 }
 
 .button {
