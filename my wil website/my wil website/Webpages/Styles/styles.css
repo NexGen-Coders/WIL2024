@@ -33,7 +33,7 @@ main {
 }
 
 form {
-    max-width: auto;
+    max-width: 90px;
     margin: 0 auto;
     text-align: left;
 }
@@ -72,7 +72,7 @@ footer {
     padding: 10px 0;
     text-align: center;
     position: fixed;
-    width: auto;
+    width: 90%;
     bottom: 0;
 }
 
@@ -84,7 +84,7 @@ footer {
 }
 
 .property img {
-    width: auto;
+    width: 100%;
     height: auto;
     border-radius: 8px;
 }
